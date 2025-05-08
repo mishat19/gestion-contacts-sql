@@ -8,6 +8,7 @@ namespace FormNomExplicite
         public Form1()
         {
             InitializeComponent();
+            BD.OuvrirConnexion();
             this.Resize += Form1_Resize!;
             listeContacts = new ListeContacts();
         }
@@ -48,7 +49,7 @@ namespace FormNomExplicite
 
         private void labelMessageSysteme_Click_1(object sender, EventArgs e)
         {
- 
+
         }
 
         private void CentrerLabel()
@@ -72,6 +73,11 @@ namespace FormNomExplicite
         {
             labelMessageSysteme.Text = message;
             CentrerLabel();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            BD.FermetureConnexion();
         }
     }
 }
