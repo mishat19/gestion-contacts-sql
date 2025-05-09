@@ -1,14 +1,20 @@
+using System.Runtime.InteropServices;
+
 using BiblioContacts;
 
 namespace FormNomExplicite
 {
     public partial class Form1 : Form
     {
+        [DllImport("kernel32.dll")]
+        private static extern bool AllocConsole();
+
         private ListeContacts listeContacts;
         public Form1()
         {
             InitializeComponent();
-            BD.OuvrirConnexion();
+            AllocConsole(); //Ouverture de la console pour les Console.WriteLine()
+            BD.OuvertureConnexion();
             this.Resize += Form1_Resize!;
             listeContacts = new ListeContacts();
         }

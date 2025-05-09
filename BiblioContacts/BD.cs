@@ -13,12 +13,12 @@ namespace BiblioContacts
     {
         private static MySqlConnection connexion;
 
-        public static bool OuvrirConnexion()
+        public static bool OuvertureConnexion()
         {
-            string serveur = "10.1.139.235";
-            string login = "a1";
-            string mdp = "mdp";
-            string bd = "basea1";
+            string serveur = "localhost";
+            string login = "root";
+            string mdp = "root";
+            string bd = "gestion_contacts";
 
             string chaineConnexion = $"server={serveur};uid={login};pwd={mdp};database={bd}";
 
@@ -26,6 +26,7 @@ namespace BiblioContacts
             {
                 connexion = new MySqlConnection(chaineConnexion);
                 connexion.Open();
+                Console.WriteLine("Connexion réussie");
                 return true;
             }
             catch (MySqlException ex)
@@ -42,6 +43,7 @@ namespace BiblioContacts
                 if (connexion.State == System.Data.ConnectionState.Open)
                 {
                     connexion.Close();
+                    Console.WriteLine("Déconnexion réussie");
                     connexion.Dispose();
                     return true;
                 } return false;
