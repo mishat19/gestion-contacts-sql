@@ -95,8 +95,9 @@ namespace FormNomExplicite
                 }
             }
 
-            if (verif)
+            if (verif && lstContacts.SelectedItem is Contact contactExistant)
             {
+                L.SupprimerContact(contactExistant);
                 L.AjouterContact(nom, prenom, enfants);
 
                 if (this.Owner is Form1 form)
