@@ -53,5 +53,12 @@ namespace BiblioContacts
                 return false;
             }
         }
+
+        public static void AjoutContact(string nom, string prenom)
+        {
+            string reqSQL = $"INSERT INTO contact (nom, prenom) VALUES ('{nom}', '{prenom}')";
+            MySqlCommand cmd = new MySqlCommand(reqSQL, connexion);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

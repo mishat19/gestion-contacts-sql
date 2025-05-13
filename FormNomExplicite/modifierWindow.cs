@@ -177,11 +177,11 @@ namespace FormNomExplicite
                 txtNom.Text = contact.Nom;
                 txtPrenom.Text = contact.Prenom;
 
-                updElement.Value = contact.PrenomsEnfants.Count;
                 flpEnfants.Controls.Clear();
 
                 if (contact.PrenomsEnfants != null && contact.PrenomsEnfants.Count > 0)
                 {
+                    updElement.Value = contact.PrenomsEnfants.Count;
                     foreach (string enfant in contact.PrenomsEnfants)
                     {
                         TextBox newTextBox = new TextBox

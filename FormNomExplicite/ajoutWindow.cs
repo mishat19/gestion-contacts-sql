@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BiblioContacts;
+using MySql.Data.MySqlClient;
 
 namespace FormNomExplicite
 {
@@ -87,6 +88,9 @@ namespace FormNomExplicite
             if (verif)
             {
                 L.AjouterContact(nom, prenom, enfants);
+
+                //Ajout dans la base de données
+                //BD.AjoutContact(nom, prenom);
 
                 if (this.Owner is Form1 form)
                 {
