@@ -79,17 +79,14 @@ namespace FormNomExplicite
 
         private void RafraichirListeContacts()
         {
-            // Définir la source de données
             lstContacts.DataSource = liste.MesContacts;
 
-            // Définir les membres d'affichage et de valeur
-            lstContacts.DisplayMember = "Nom"; // Affiche le nom du contact
-            lstContacts.ValueMember = "Id";   // Utilise l'ID comme valeur
+            lstContacts.DisplayMember = "Nom";
+            lstContacts.ValueMember = "Id";
         }
 
         private void lstContacts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             btnVisualiser.Enabled = true;
         }
 

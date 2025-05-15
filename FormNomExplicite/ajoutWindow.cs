@@ -90,7 +90,11 @@ namespace FormNomExplicite
                 L.AjouterContact(nom, prenom, enfants);
 
                 //Ajout dans la base de données
-                //BD.AjoutContact(nom, prenom);
+                if(enfants != null)
+                {
+                    BD.AjoutContactEnfants(nom, prenom, enfants);
+                }
+                else BD.AjoutContact(nom, prenom);
 
                 if (this.Owner is Form1 form)
                 {

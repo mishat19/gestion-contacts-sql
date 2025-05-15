@@ -17,6 +17,7 @@ namespace FormNomExplicite
             BD.OuvertureConnexion();
             this.Resize += Form1_Resize!;
             listeContacts = new ListeContacts();
+            listeContacts = BD.LectureContact();
         }
 
         private void Form1_Load(object sender, EventArgs e)
